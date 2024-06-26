@@ -29,13 +29,15 @@ console.log("The charAt(5) of string is : " + x.charAt(5)); //dont allow negativ
 console.log("The at(-1) of string is : " + x.at(-1)); //allow negative indexing
 console.log("The charCodeAt(5) of string is : " + x.charCodeAt(5));
 console.log("The slice(5) of string is : " + x.slice(5));
-console.log("The concat(hello,world) of string is : " + x.concat("hello", "world"));
+console.log(
+  "The concat(hello,world) of string is : " + x.concat("hello", "world")
+);
 console.log("x.trim()" + x.trim());
 console.log(x.padEnd(30, "*"));
 
 //Numbers Exercise
 
-let y = 9999.656;
+let y = 99990.656;
 console.log(
   "toExponential" + y.toExponential(2),
   y.toExponential(4),
@@ -65,7 +67,6 @@ obj = {
   work: "google",
 };
 
-
 console.log(obj.aakash);
 
 arr[3] = obj;
@@ -83,44 +84,46 @@ for (let i = 0; i < arr.length; i++) {
 }
 text += "</ul>";
 
-document.write("<br>"+text);
+document.write("<br>" + text);
 
-a=arr.forEach(console.log);
+a = arr.forEach(console.log);
 
 console.log(typeof arr);
 
 const myObj = {
-    name: "John",
-    age: 30,
-    cars: [
-        { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
-        { name: "BMW", models: ["320", "X3", "X5"] },
-        { name: "Fiat", models: ["500", "Panda"] },
-    ],
+  name: "John",
+  age: 30,
+  cars: [
+    { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+    { name: "BMW", models: ["320", "X3", "X5"] },
+    { name: "Fiat", models: ["500", "Panda"] },
+  ],
 };
-let output = ""
+let output = "";
 for (let i in myObj.cars) {
-    output += "<h1>" + myObj.cars[i].name + "</h1>";
-    for (let j in myObj.cars[i].models) {
-        output += myObj.cars[i].models[j] + "<br>";
-    }
+  output += "<h1>" + myObj.cars[i].name + "</h1>";
+  for (let j in myObj.cars[i].models) {
+    output += myObj.cars[i].models[j] + "<br>";
+  }
 }
 
-document.write("<br>"+output);
-document.write("<br>"+arr.toString());
+document.write("<br>" + output);
+document.write("<br>" + arr.toString());
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.write("<br>"+fruits.join(" * "));
+document.write("<br>" + fruits.join(" * "));
 console.log("Actual array : " + fruits);
-console.log("modified with copywithin : "+fruits.copyWithin(3,0));
-fruits.splice(2, 0, "Lemon", "Kiwi")
+console.log("modified with copywithin : " + fruits.copyWithin(3, 0));
+fruits.splice(2, 0, "Lemon", "Kiwi");
 console.log(fruits);
 
 const points = [40, 100, 1, 5, 25, 10];
-points.sort(function(a, b){return a - b});
-document.write("<br>"+points);
-document.write("<br>"+Math.trunc(79.1324234));
-document.write("<br>"+Math.sign(-0.1e-323));
+points.sort(function (a, b) {
+  return a - b;
+});
+document.write("<br>" + points);
+document.write("<br>" + Math.trunc(79.1324234));
+document.write("<br>" + Math.sign(-0.1e-323));
 document.write(Math.random(100));
 
 // let age = prompt("please enter your age");
@@ -128,30 +131,102 @@ document.write(Math.random(100));
 // document.write("<br>decision : "+votable);
 
 switch (new Date().getDay()) {
-    case 0:
-      day = "Sunday";
-      break;
-    case 1:
-      day = "Monday";
-      break;
-    case 2:
-       day = "Tuesday";
-      break;
-    case 3:
-      day = "Wednesday";
-      break;
-    case 4:
-      day = "Thursday";
-      break;
-    case 5:
-      day = "Friday";
-      break;
-    case 6:
-      day = "Saturday";
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+
+document.write("<br>Today is : " + day + "<br>");
+
+for (x in person) {
+  document.write(x + "<br>");
+}
+
+{
+  ("strict mode");
+  temp = 5;
+
+  var temp;
+}
+
+window.addEventListener(
+  "toggle",
+  document.write("This is the eventlistner used way")
+);
+
+class car {
+  // constructor(name, year) {
+  //   this.name = name;
+  //   this.year = year;
+  // }
+
+  calculate_age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
   }
 
-  document.write("<br>Today is : "+day+"<br>" );
-
-  for (x in person){
-    document.write(x+"<br>");
+  display_age() {
+    alert("the age of the car is : " + this.calculate_age());
   }
+}
+
+const myCar1 = new car("Ford", 2014);
+const myCar2 = new car("Audi", 2019);
+
+// myCar1.display_age();
+// myCar2.display_age();
+
+let text2 =
+  '{ "employees" : [' +
+  '{ "firstName":"John" , "lastName":"Doe" },' +
+  '{ "firstName":"Anna" , "lastName":"Smith" },' +
+  '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+const objee = JSON.parse(text2);
+console.log(objee);
+
+document.getElementById("hello").onclick = () => {
+  document.write("hello");
+};
+
+document.write(document.getElementsByClassName("body"));
+console.log(document.getElementsByClassName("body"));
+
+try{
+  for(let n =0;n<1000;n++){
+    document.getElementById('time-display').innerHTML = Date();
+  }
+
+}catch(err){
+  err.message;
+}
+
+console.log(document.getElementById('work').firstChild.nodeValue);
+console.log(document.getElementById('work').childNodes[]);
+
+
+task = ['hello','this','aakash'];
+
+// console.log(task.forEach());
+
+
+
+console.log(document.getElementById('parent').firstChild.nodeValue);
+

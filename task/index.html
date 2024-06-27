@@ -7,16 +7,65 @@
 </head>
 
 <body style="display: grid; grid-template-columns: 1fr 1fr;">
-    
-    <div style="display:block; width: 50%;">
+    <div class="form-1" style="display:block; width: 50%;">
         <label for="name">First Name</label>
-        <input type="text" name="first-name" value="" onkeypress="fun()">
+        <input type="text" name="a"  placeholder="Aakash" onkeyup="fun(0)"><br>
+        <label for="name">Second Name</label>
+        <input type="text" name="b" placeholder="Maurya" onkeyup="fun(1)"><br>
+        <label for="name">Contact Number</label>
+        <input type="text" name="c"  placeholder="number" onkeyup="fun(2)"><br>
+        <label for="name">Address</label>
+        <input type="text" name="d"  placeholder="address" onkeyup="fun(3)"><br>
+        <label for="name">kld</label>
+        <input type="text" name="e"  placeholder="address" onkeyup="fun(4)"><br>
+    </div>
+    <div class="form-2" style="display:block; width: 50%;">
+        <label for="second">First Name</label>
+        <input type="text" name="p" ><br>
+        <label for="second">Second Name</label>
+        <input type="text" name="q" ><br>
+        <label for="second">Contact Number</label>
+        <input type="text" name="r" ><br>
+        <label for="second">Address</label>
+        <input type="text" name="s" ><br>
+        <label for="second">Address</label>
+        <input type="text" name="t" ><br>
     </div>
 
-    <div style="display:block; width: 50%;">
-       
-    </div>
-    <script src="assets/JS/index.js"></script>
+
+
+    <script>
+         var first_inputs = document.querySelectorAll(".form-1 input");
+         var second_inputs = document.querySelectorAll(".form-2 input");
+
+        function fun(i) {
+            // const first_div = document.querySelector("body>div");
+            // console.log(first_div.innerHTML);
+            // let copy_div = first_div.nextElementSibling;
+            // copy_div.innerHTML = first_div.innerHTML;
+            // console.log(copy_div.innerHTML);
+           
+            
+
+            // second_inputs[i].value = first_inputs[i].value;
+            // console.log(second_inputs[i].value)
+            second_inputs[i].value = first_inputs[i].value;
+
+
+            //working using for loop (for optimization avoiding this way)
+            // let len = first_inputs.length;
+            // for (let i = 0; i < len; i++) {
+            //     second_inputs[i].value = first_inputs[i].value;
+            //     console.log(first_inputs[i])
+            // }
+        }
+        //working
+        // {
+        //     let val = document.getElementById('inpt-1').value;
+        //     document.getElementById("inpt-2").value = val;
+        // }
+    </script>
+
 </body>
 
 </html>
